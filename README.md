@@ -279,14 +279,15 @@ It's really hard to explain without going into the whole type system, so I'll st
 data Suit = Hearts | Diamonds | Clubs | Spades
 ```
 
-The type "Suit" has only four values, one for each suit.  They are not backed by a primitive value but literally are those values only.  Haskell doesn't have methods as we'd understand them in the OOP world, and I've not been able to wrap my brain around Haskell enough to say if you can attach methods consistently to types of an Enum.  The can, however, be used in pattern matching:
+The type "Suit" has only four values, one for each suit.  They are not backed by a primitive value but literally are those values only.  Haskell doesn't have methods as we'd understand them in the OOP world, and I've not been able to wrap my brain around Haskell enough to say if you can attach methods consistently to types of an Enum.  They can, however, be used in pattern matching:
 
 ```haskell
 data Color = Red | Black
 
 suitColor :: Suit -> Color
-suitColor Hearts | Diamonds = Red
-suitColor Clubs | Spades = Black
+suitColor Hearts = Red
+suitColor Diamonds = Red
+suitColor _ = Black
 ```
 
 Because type values are technically not values but "type constructors" they can be parameterized by other values.  For instance, the infamous Maybe Monad is defined as:
