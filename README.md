@@ -168,7 +168,7 @@ enum Suit {
 }
 ```
 
-Further reading: https://www.javatpoint.com/enum-in-java
+Further reading: https://www.tpointtech.com/enum-in-java
 
 ### Python
 
